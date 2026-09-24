@@ -1116,11 +1116,15 @@
 </footer>
 
 <script>
-  // ── CV Download
+  // ── CV Download (language-aware)
   function downloadCV() {
+    const isHe = document.body.classList.contains('he');
+    const file = isHe
+      ? 'CV Noa Ben Shalom heb.pdf'
+      : 'CV Noa Ben Shalom eng.pdf';
     const link = document.createElement('a');
-    link.href = 'CV_Noa_Ben_Shalom_2026.pdf';
-    link.download = 'CV_Noa_Ben_Shalom_2026.pdf';
+    link.href = file;
+    link.download = file;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
